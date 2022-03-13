@@ -24,6 +24,11 @@ public class Categoria {
         this.empresas = empresas;
     }
 
+    public Categoria(String description, List<Empresa> empresas) {
+        this.description = description;
+        this.empresas = empresas;
+    }
+
     public long getIdCategoria() {
         return idCategoria;
     }
