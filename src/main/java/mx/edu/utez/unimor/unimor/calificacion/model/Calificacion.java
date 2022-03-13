@@ -31,5 +31,71 @@ public class Calificacion {
     @NotNull
     private Usuario usuario;
 
+    public Calificacion() {
+    }
 
+    public Calificacion(String calificacion, String favoritos, List<Comentarios> comentarios, Empresa empresa, Usuario usuario) {
+        this.calificacion = calificacion;
+        this.favoritos = favoritos;
+        this.comentarios = comentarios;
+        this.empresa = empresa;
+        this.usuario = usuario;
+    }
+
+    public Calificacion(long idCalificacion, String calificacion, String favoritos, List<Comentarios> comentarios, Empresa empresa, Usuario usuario) {
+        this.idCalificacion = idCalificacion;
+        this.calificacion = calificacion;
+        this.favoritos = favoritos;
+        this.comentarios = comentarios;
+        this.empresa = empresa;
+        this.usuario = usuario;
+    }
+
+    public long getIdCalificacion() {
+        return idCalificacion;
+    }
+
+    public void setIdCalificacion(long idCalificacion) {
+        this.idCalificacion = idCalificacion;
+    }
+
+    public String getCalificacion() {
+        return calificacion;
+    }
+
+    public void setCalificacion(String calificacion) {
+        this.calificacion = calificacion;
+    }
+
+    public String getFavoritos() {
+        return favoritos;
+    }
+
+    public void setFavoritos(String favoritos) {
+        this.favoritos = favoritos;
+    }
+
+    public List<Comentarios> getComentarios() {
+        return comentarios;
+    }
+
+    public void setComentarios(List<Comentarios> comentarios) {
+        this.comentarios = comentarios;
+    }
+
+    public Empresa getEmpresa() {
+        return empresa;
+    }
+
+    public void setEmpresa(Empresa empresa) {
+        this.empresa = empresa;
+    }
+
+    public Usuario getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
+    }
 }
