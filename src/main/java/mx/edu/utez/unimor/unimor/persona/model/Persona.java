@@ -41,6 +41,15 @@ public class Persona {
         this.fechaNacimiento = fechaNacimiento;
         this.usuario = usuario;
     }
+    public Persona(String nombre, String apellidoPaterno, String apellidoMaterno, String fechaNacimiento, Usuario usuario) {
+
+        this.nombre = nombre;
+        this.apellidoPaterno = apellidoPaterno;
+        this.apellidoMaterno = apellidoMaterno;
+        this.fechaNacimiento = fechaNacimiento;
+        this.usuario = usuario;
+    }
+
 
     public long getIdPersona() {
         return idPersona;

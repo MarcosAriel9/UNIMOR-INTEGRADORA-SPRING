@@ -1,4 +1,11 @@
 package mx.edu.utez.unimor.unimor.persona.model;
 
-public class PersonaRepository {
+import mx.edu.utez.unimor.unimor.empresa.model.Empresa;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import java.util.Optional;
+
+public interface PersonaRepository extends JpaRepository<Persona,Long> {
+    Optional<Persona> findByPersona(String Persona);
+    boolean existsById(long idPersona);
 }

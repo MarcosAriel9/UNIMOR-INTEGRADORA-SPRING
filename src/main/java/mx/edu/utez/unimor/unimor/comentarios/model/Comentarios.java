@@ -17,4 +17,41 @@ public class Comentarios {
     @NotNull
     private Calificacion calificacion;
 
+    public Comentarios() {
+    }
+
+    public Comentarios(long idComentarios, String comentario, Calificacion calificacion) {
+        this.idComentarios = idComentarios;
+        this.comentario = comentario;
+        this.calificacion = calificacion;
+    }
+
+    public Comentarios(String comentario, Calificacion calificacion) {
+        this.comentario = comentario;
+        this.calificacion = calificacion;
+    }
+
+    public long getIdComentarios() {
+        return idComentarios;
+    }
+
+    public void setIdComentarios(long idComentarios) {
+        this.idComentarios = idComentarios;
+    }
+
+    public String getComentario() {
+        return comentario;
+    }
+
+    public void setComentario(String comentario) {
+        this.comentario = comentario;
+    }
+
+    public Calificacion getCalificacion() {
+        return calificacion;
+    }
+
+    public void setCalificacion(Calificacion calificacion) {
+        this.calificacion = calificacion;
+    }
 }

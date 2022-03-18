@@ -15,13 +15,13 @@ public class Empresa {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long idEmpresa;
-    @Column(unique = true)
+    @Column(nullable = true)
     private String nombre;
-    @Column(unique = true)
+    @Column(nullable = true)
     private String description;
-    @Column(unique = true)
+    @Column(nullable = true)
     private int telefono;
-    @Column(unique = true)
+    @Column(nullable = true)
     private int estado;
     @OneToOne
     @JoinColumn(name = "id_ubicacion",referencedColumnName = "idUbicacion")
@@ -41,6 +41,15 @@ public class Empresa {
 
     public Empresa(long idEmpresa, String nombre, String description, int telefono, int estado, Ubicacion ubicacion, List<Categoria> categoria) {
         this.idEmpresa = idEmpresa;
+        this.nombre = nombre;
+        this.description = description;
+        this.telefono = telefono;
+        this.estado = estado;
+        this.ubicacion = ubicacion;
+        this.categoria = categoria;
+    }
+    public Empresa( String nombre, String description, int telefono, int estado, Ubicacion ubicacion, List<Categoria> categoria) {
+
         this.nombre = nombre;
         this.description = description;
         this.telefono = telefono;
