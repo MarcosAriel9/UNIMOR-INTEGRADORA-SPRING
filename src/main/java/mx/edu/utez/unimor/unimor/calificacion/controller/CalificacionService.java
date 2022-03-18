@@ -34,22 +34,22 @@ public class CalificacionService {
     }
 
     @Transactional(rollbackOn = {SQLException.class})
-    public ResponseEntity<Message> save(Calificacion category){
-        Optional<Calificacion> existsCategory = calificacionRepository.findBycalificacion(category.getCalificacion());
+    public ResponseEntity<Message> save(Calificacion calificacion){
+        Optional<Calificacion> existsCategory = calificacionRepository.findBycalificacion(calificacion.getCalificacion());
         if (existsCategory.isPresent()){
             return new ResponseEntity<>(new Message("La calificaion ya existe",true,null),
                     HttpStatus.BAD_REQUEST);
         }
-        Calificacion savedCategory = calificacionRepository.saveAndFlush(category);
+        Calificacion savedCategory = calificacionRepository.saveAndFlush(calificacion);
         return new ResponseEntity<>(new Message("calificaion registrada",false,savedCategory),
                 HttpStatus.OK);
     }
 
     @Transactional(rollbackOn = {SQLException.class})
-    public ResponseEntity<Message> update(Calificacion category){
-        if (calificacionRepository.existsById(category.getIdCalificacion())){
+    public ResponseEntity<Message> update(Calificacion calificacion){
+        if (calificacionRepository.existsById(calificacion.getIdCalificacion())){
             return new ResponseEntity<>(new Message("calificaion actualizada",false,
-                    calificacionRepository.saveAndFlush(category)),HttpStatus.OK);
+                    calificacionRepository.saveAndFlush(calificacion)),HttpStatus.OK);
         }
         return new ResponseEntity<>(new Message("La calificaion no existe",true,null),
                 HttpStatus.BAD_REQUEST);
