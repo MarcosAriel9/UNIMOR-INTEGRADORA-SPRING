@@ -26,7 +26,7 @@ public class Persona {
     private String fechaNacimiento;
 
     @OneToOne
-    @JoinColumn(name = "id_usuario",referencedColumnName = "idUsuario")
+    @JoinColumn(nullable=false,name = "id_usuario",referencedColumnName = "idUsuario")
     @NotNull
     private Usuario usuario;
 

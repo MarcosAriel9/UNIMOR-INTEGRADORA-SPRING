@@ -24,7 +24,7 @@ public class Empresa {
     @Column(nullable = true)
     private int estado;
     @OneToOne
-    @JoinColumn(name = "id_ubicacion",referencedColumnName = "idUbicacion")
+    @JoinColumn(nullable=false ,name = "id_ubicacion",referencedColumnName = "idUbicacion")
     @NotNull
     private Ubicacion ubicacion;
     @OneToMany(mappedBy = "empresa")

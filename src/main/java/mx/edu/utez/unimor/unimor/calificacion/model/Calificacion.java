@@ -23,11 +23,11 @@ public class Calificacion {
     @JsonIgnore
     private List<Comentarios> comentarios;
     @ManyToOne
-    @JoinColumn(name = "empresa_id")
+    @JoinColumn(nullable=false, name = "empresa_id")
     @NotNull
     private Empresa empresa;
     @ManyToOne
-    @JoinColumn(name = "usuario_id")
+    @JoinColumn(nullable=false, name = "usuario_id")
     @NotNull
     private Usuario usuario;
 

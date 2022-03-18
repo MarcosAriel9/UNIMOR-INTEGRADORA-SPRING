@@ -1,7 +1,7 @@
 package mx.edu.utez.unimor.unimor.categoria.controller;
 
 
-import mx.edu.utez.unimor.unimor.calificacion.controller.CalificacionDTO;
+
 import mx.edu.utez.unimor.unimor.categoria.model.Categoria;
 import mx.edu.utez.unimor.unimor.utils.Message;
 import org.springframework.beans.factory.annotation.Autowired;

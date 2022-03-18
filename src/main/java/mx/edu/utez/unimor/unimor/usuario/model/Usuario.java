@@ -22,7 +22,7 @@ public class Usuario {
     @Column(unique = true)
     private String foto;
     @OneToOne
-    @JoinColumn(name = "id_rol",referencedColumnName = "idRol")
+    @JoinColumn(nullable=false ,name = "id_rol",referencedColumnName = "idRol")
     @NotNull
     private Rol rol;
     @OneToOne(mappedBy = "usuario")

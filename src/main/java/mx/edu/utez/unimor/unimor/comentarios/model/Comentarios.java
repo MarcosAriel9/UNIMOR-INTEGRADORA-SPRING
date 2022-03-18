@@ -13,7 +13,7 @@ public class Comentarios {
     @Column(unique = true)
     private String comentario;
     @ManyToOne
-    @JoinColumn(name = "id_calificacion")
+    @JoinColumn(nullable=false,name = "id_calificacion")
     @NotNull
     private Calificacion calificacion;
 

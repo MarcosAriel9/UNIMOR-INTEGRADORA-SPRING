@@ -17,19 +17,19 @@ import java.util.Optional;
 @Transactional
 public class CategoriaService {
     @Autowired
-    CategoriaRepository calificacionRepository;
+    CategoriaRepository categoriaRepository;
 
     @Transactional
     public ResponseEntity<Message> findAll(){
         return new ResponseEntity<>(new Message("ok",false,
-                calificacionRepository.findAll()), HttpStatus.OK);
+                categoriaRepository.findAll()), HttpStatus.OK);
     }
 
     @Transactional
     public ResponseEntity<Message> findById(long id){
-        if (calificacionRepository.existsById(id)){
+        if (categoriaRepository.existsById(id)){
             return new ResponseEntity<>(new Message("ok",
-                    false, calificacionRepository.findById(id)),HttpStatus.OK);
+                    false, categoriaRepository.findById(id)),HttpStatus.OK);
         }
         return new ResponseEntity<>(new Message("No se encontró la calificaion",true,null),
                 HttpStatus.BAD_REQUEST);
@@ -37,21 +37,21 @@ public class CategoriaService {
 
     @Transactional(rollbackOn = {SQLException.class})
     public ResponseEntity<Message> save(Categoria category){
-        Optional<Categoria> existsCategory = calificacionRepository.findBycategoria(category.getDescription());
+        Optional<Categoria> existsCategory = categoriaRepository.findByCategoria(category.getDescription());
         if (existsCategory.isPresent()){
             return new ResponseEntity<>(new Message("La Categoria ya existe",true,null),
                     HttpStatus.BAD_REQUEST);
         }
-        Categoria savedCategory = calificacionRepository.saveAndFlush(category);
+        Categoria savedCategory = categoriaRepository.saveAndFlush(category);
         return new ResponseEntity<>(new Message("Categoria registrada",false,savedCategory),
                 HttpStatus.OK);
     }
 
     @Transactional(rollbackOn = {SQLException.class})
     public ResponseEntity<Message> update(Categoria category){
-        if (calificacionRepository.existsById(category.getIdCategoria())){
+        if (categoriaRepository.existsById(category.getIdCategoria())){
             return new ResponseEntity<>(new Message("Categoria actualizada",false,
-                    calificacionRepository.saveAndFlush(category)),HttpStatus.OK);
+                    categoriaRepository.saveAndFlush(category)),HttpStatus.OK);
         }
         return new ResponseEntity<>(new Message("La Categoria no existe",true,null),
                 HttpStatus.BAD_REQUEST);
