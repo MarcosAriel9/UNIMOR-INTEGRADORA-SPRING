@@ -36,7 +36,7 @@ public class ComentariosService {
 
     @Transactional(rollbackOn = {SQLException.class})
     public ResponseEntity<Message> save(Comentarios comentarios){
-        Optional<Comentarios> existscomentarios = comentariosRepository.findByComentarios(comentarios.getComentario());
+        Optional<Comentarios> existscomentarios = comentariosRepository.findByComentario(comentarios.getComentario());
         if (existscomentarios.isPresent()){
             return new ResponseEntity<>(new Message("LOS comentarios ya existe",true,null),
                     HttpStatus.BAD_REQUEST);

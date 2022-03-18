@@ -36,7 +36,7 @@ public class EmpresaService {
 
     @Transactional(rollbackOn = {SQLException.class})
     public ResponseEntity<Message> save(Empresa empresa){
-        Optional<Empresa> existsCategory = empresaRepository.findByEmpresa(empresa.getNombre());
+        Optional<Empresa> existsCategory = empresaRepository.findByNombre(empresa.getNombre());
         if (existsCategory.isPresent()){
             return new ResponseEntity<>(new Message("La Empresa ya existe",true,null),
                     HttpStatus.BAD_REQUEST);
