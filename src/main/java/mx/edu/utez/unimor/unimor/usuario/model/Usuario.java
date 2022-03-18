@@ -43,6 +43,15 @@ public class Usuario {
         this.persona = persona;
         this.calificacion = calificacion;
     }
+    public Usuario( String correo, String contraseña, String foto, Rol rol, Persona persona,List<Calificacion> calificacion) {
+
+        this.correo = correo;
+        this.contraseña = contraseña;
+        this.foto = foto;
+        this.rol = rol;
+        this.persona = persona;
+        this.calificacion = calificacion;
+    }
 
 
     public List<Calificacion> getCalificacion() {

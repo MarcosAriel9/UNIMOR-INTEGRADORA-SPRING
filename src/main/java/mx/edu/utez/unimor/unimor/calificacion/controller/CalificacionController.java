@@ -23,13 +23,13 @@ public class CalificacionController {
     }
 
     @PostMapping("/")
-    public ResponseEntity<Message> createCategory(@RequestBody CalificacionDTO calificacionDTO) {
+    public ResponseEntity<Message> createCalificacion(@RequestBody CalificacionDTO calificacionDTO) {
         return calificacionService.save(new Calificacion(calificacionDTO.getCalificacion(),calificacionDTO.getFavoritos(),
                 calificacionDTO.getComentarios(),calificacionDTO.getEmpresa(),calificacionDTO.getUsuario()));
     }
 
     @PutMapping("/")
-    public ResponseEntity<Message> updateCategory(@RequestBody CalificacionDTO calificacionDTO) {
+    public ResponseEntity<Message> updateCalificacion(@RequestBody CalificacionDTO calificacionDTO) {
         return calificacionService.update(new Calificacion(calificacionDTO.getIdCalificacion(),
                 calificacionDTO.getCalificacion(),calificacionDTO.getFavoritos(),
                 calificacionDTO.getComentarios(),calificacionDTO.getEmpresa(),calificacionDTO.getUsuario()));

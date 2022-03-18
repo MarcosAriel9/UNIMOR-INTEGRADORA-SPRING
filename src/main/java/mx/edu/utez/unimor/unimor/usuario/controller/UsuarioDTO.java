@@ -28,6 +28,8 @@ public class UsuarioDTO {
     public UsuarioDTO() {
     }
 
+
+
     public UsuarioDTO(long idUsuario, String correo, String contraseña, String foto, Rol rol, Persona persona,List<Calificacion> calificacion) {
         this.idUsuario = idUsuario;
         this.correo = correo;
@@ -38,6 +40,7 @@ public class UsuarioDTO {
         this.calificacion = calificacion;
     }
     public UsuarioDTO( String correo, String contraseña, String foto, Rol rol, Persona persona,List<Calificacion> calificacion) {
+
         this.correo = correo;
         this.contraseña = contraseña;
         this.foto = foto;
