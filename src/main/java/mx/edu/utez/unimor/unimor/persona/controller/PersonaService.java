@@ -37,7 +37,7 @@ public class PersonaService {
 
     @Transactional(rollbackOn = {SQLException.class})
     public ResponseEntity<Message> save(Persona persona) {
-        Optional<Persona> existsPersona = personaRepository.findByPersona(persona.getNombre());
+        Optional<Persona> existsPersona = personaRepository.findByNombre(persona.getNombre());
         if (existsPersona.isPresent()) {
             return new ResponseEntity<>(new Message("La Persona ya existe", true, null),
                     HttpStatus.BAD_REQUEST);

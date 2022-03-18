@@ -37,7 +37,7 @@ UsuarioRepository usuarioRepository;
 
     @Transactional(rollbackOn = {SQLException.class})
     public ResponseEntity<Message> save(Usuario usuario){
-        Optional<Usuario> existsCategory = usuarioRepository.findByUsuario(usuario.getCorreo());
+        Optional<Usuario> existsCategory = usuarioRepository.findByCorreo(usuario.getCorreo());
         if (existsCategory.isPresent()){
             return new ResponseEntity<>(new Message("El usuario ya existe",true,null),
                     HttpStatus.BAD_REQUEST);
